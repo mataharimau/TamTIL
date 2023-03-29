@@ -1,26 +1,18 @@
-//
-//  ContentView.swift
-//  TamTIL
-//
-//  Created by Audrey Tam on 29/3/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+  let array = Acronyms()
+
+  var body: some View {
+    VStack {
+      Text(array.printAcronyms(array.acronyms))
     }
+    .padding()
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
