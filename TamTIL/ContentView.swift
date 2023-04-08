@@ -5,7 +5,8 @@ struct ContentView: View {
 
   var body: some View {
     VStack {
-      Text(array.printAcronyms(array.acronyms))
+//      Text(array.printAcronyms(array.acronyms))
+      Text(array.display)
     }
     .padding()
   }

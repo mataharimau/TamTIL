@@ -9,6 +9,7 @@ struct Acronym {
 
 class Acronyms {
   var acronyms: [Acronym] = []
+  var display = ""
 
   let item1 = Acronym(short: "TIL", long: "Today I Learned", alt: nil)
   let item2 = Acronym(short: "MVC", long: "Model View Controller", alt: "Massive View Controller")
@@ -16,6 +17,8 @@ class Acronyms {
 
   init() {
     addAll()
+//    display = printAcronyms(acronyms)
+    createDisplay()
   }
 
   func addItem(_ item: Acronym) {
@@ -38,5 +41,14 @@ class Acronyms {
     }
 
     return display
+  }
+
+  // Alternative: Append directly to the display property
+  func createDisplay() {
+    for item in acronyms {
+      if let alt = item.alt {
+        display += "\(item.short): \(item.long) or \(alt)\n"
+      }
+    }
   }
 }
